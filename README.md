@@ -1,6 +1,6 @@
 # Cobol_Research_Learning_Informations
 
-## Informations 
+## Genel bilgi 
 COBOL (Common Business Oriented Language), özellikle büyük işletmelerde finansal ve muhasebe işlemleri gibi işletme yönetimi alanlarında kullanılan bir programlama dilidir. COBOL, ilk olarak 1959 yılında IBM tarafından geliştirilmiş ve bugün hala yaygın olarak kullanılmaktadır.
 
 COBOL, büyük veri işleme ve işletme yönetimi için optimize edilmiş bir programlama dilidir. Genellikle işletme dünyasında kullanılan ana bilgisayar sistemleri için kullanılır. Örneğin, bankalar, sigorta şirketleri, finans kuruluşları ve diğer büyük kuruluşlar gibi işletmelerde yaygın olarak kullanılır.
@@ -10,7 +10,7 @@ COBOL, özellikle büyük işletmelerin finansal işlemlerinin yönetimi için k
 COBOL, aynı zamanda güçlü bir veri işleme yeteneğine sahiptir. Büyük veri tabanlarını işleyebilir, veri dosyalarını işleyebilir ve karmaşık işlemleri gerçekleştirebilir.
 
 Bu nedenle, büyük işletmelerin finansal işlemlerinin yönetimi ve veri işleme ihtiyaclarını karşılamak amacıyla kullanılabilir.
-## İnstall
+## Yükleme
 Kurabileceğimiz birden fazla derleyici vardır
 
 - IBM Enterprise COBOL - IBM mainframe'leri için COBOL derleyicisi.
@@ -120,6 +120,8 @@ COBOL dilindeki en önemli değişikliklerden bazıları şunlardır:
 - 2014 standartında tanıtılan veri öğesi tanımlama özellikleri
 - 2014 standartında tanıtılan nesne yönelimli programlama kavramlarına uygun olarak kalıtım, çoklu kalıtım, arayüzler, soyut sınıflar ve özet veri tipleri gibi özellikler
 Özetle, COBOL dilinin OOP özellikleri tam anlamıyla nesne yönelimli programlama dili olarak kabul edilmez. Ancak, 2002 ve 2014 standartlarında yapılan güncellemeler, COBOL'u daha modüler ve yeniden kullanılabilir hale getirmiştir.
+
+### Klosörlerin içerisinde oluşturacağım README.md ler ile ana başlık olabilecek konular için tek tek döküman oluşturup anlatacağım.
 
 ## Yardımcı araçlar
 Burada kullandığım yararlandığım kaynakların tamamını listeleyeceğim
