@@ -27,7 +27,7 @@ Benim tercihim OpenCOBOL yani GnuCOBOL oldu
 
 ## Amaç
 - Hedefimiz 0 dan başlayarak cobol dilinin ana yapısını anlayıp basit projelerde kod yazabilir hale gelmektir.
-- C diline benzeyen yapısından dolayı daha önce C öğrenirken kullandığım Libft projesindeki dökümanlara uyarak hareket edicem.
+- C diline benzeyen yapısından dolayı daha önce C öğrenirken kullandığım Libft projesindeki dökümanlara uyarak kendi kütüphanemi oluşturmaya çalışacağım .
 - Temel yapıların tamamını kullanıp dil hakkında bilgi edinip kullanabilir hale gelmek ilk hedefimiz.
 - İkincil hedef daha sonralardan OOP yapısını kullanılabilir hale getirildiğini okudğum 2002 ve 2014 standartlarını anlamak ve kullanmak olucak.
 - Burada hazırladığım dökümanın amacı ise dil ilgili kullanıma uygun detaylı bir türkçe içeriğin bulunmamısıdır. İlk bakış için dilin özelliklerini genel yapısını okuyucuya anlatmak ilk isteğimdir.
@@ -65,6 +65,7 @@ COBOL dili tab karakterine karşı hassastır. Bir satırda tab kullanılmak ist
 - COBOL dilinde malloc gibi bir yapı bulunmaz. COBOL'da bellek yönetimi farklı şekilde yapılır. Bellek ayırma ve serbest bırakma işlemleri, programcı tarafından kodda tanımlanmaz, ancak işletim sistemi tarafından yönetilir.
 - COBOL programları, bellek tahsisi için "WORKING-STORAGE" veya "LINKAGE" bölümlerinde değişkenler tanımlar. Bu değişkenler, programın çalışması sırasında bellek alanına yerleştirilir. Ayrıca, COBOL'da veri bölümleri tanımlanırken veri tiplerinin boyutu ve bellek hizalaması otomatik olarak işletim sistemi tarafından belirlenir.
 - Bu nedenle, programcıların bellek ayırma veya serbest bırakma gibi işlemlerle ilgilenmeleri gerekmez. Ancak, COBOL programcıları bellek kullanımını optimize etmek için çalışma zamanı bellek tahsisi yöntemlerini öğrenebilir ve kullanabilirler.
+
 ### Soru 4) Kütüphaneler nasıl kullanılır.
 #### Örnek kütüphaneler
 - CBL_IO : Giriş/çıkış işlemlerini gerçekleştirmek için kullanılır.
