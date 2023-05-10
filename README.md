@@ -30,6 +30,7 @@ Benim tercihim OpenCOBOL yani GnuCOBOL oldu
 - C diline benzeyen yapısından dolayı daha önce C öğrenirken kullandığım Libft projesindeki dökümanlara uyarak hareket edicem.
 - Temel yapıların tamamını kullanıp dil hakkında bilgi edinip kullanabilir hale gelmek ilk hedefimiz.
 - İkincil hedef daha sonralardan OOP yapısını kullanılabilir hale getirildiğini okudğum 2002 ve 2014 standartlarını anlamak ve kullanmak olucak.
+- Burada hazırladığım dökümanın amacı ise dil ilgili kullanıma uygun detaylı bir türkçe içeriğin bulunmamısıdır. İlk bakış için dilin özelliklerini genel yapısını okuyucuya anlatmak ilk isteğimdir.
 
 ## Notlar
 ### Soru 1) Ana yapı nasıldır ?
@@ -64,6 +65,60 @@ COBOL dili tab karakterine karşı hassastır. Bir satırda tab kullanılmak ist
 - COBOL dilinde malloc gibi bir yapı bulunmaz. COBOL'da bellek yönetimi farklı şekilde yapılır. Bellek ayırma ve serbest bırakma işlemleri, programcı tarafından kodda tanımlanmaz, ancak işletim sistemi tarafından yönetilir.
 - COBOL programları, bellek tahsisi için "WORKING-STORAGE" veya "LINKAGE" bölümlerinde değişkenler tanımlar. Bu değişkenler, programın çalışması sırasında bellek alanına yerleştirilir. Ayrıca, COBOL'da veri bölümleri tanımlanırken veri tiplerinin boyutu ve bellek hizalaması otomatik olarak işletim sistemi tarafından belirlenir.
 - Bu nedenle, programcıların bellek ayırma veya serbest bırakma gibi işlemlerle ilgilenmeleri gerekmez. Ancak, COBOL programcıları bellek kullanımını optimize etmek için çalışma zamanı bellek tahsisi yöntemlerini öğrenebilir ve kullanabilirler.
+### Soru 4) Kütüphaneler nasıl kullanılır.
+#### Örnek kütüphaneler
+- CBL_IO : Giriş/çıkış işlemlerini gerçekleştirmek için kullanılır.
+- CBL_MATH : Matematiksel işlemler için kullanılır.
+- CBL_DB2 : IBM DB2 veritabanı yönetim sistemine bağlantı kurmak için kullanılır.
+- CBL_XML : XML dosyalarını işlemek için kullanılır.
+- CBL_JSON : JSON dosyalarını işlemek için kullanılır.
+#### Nasıl kullanılır
+- Bu kütüphaneleri kullanmak için öncelikle USING anahtar kelimesi ile birlikte kullanılacak kütüphane ismi belirtilir. Daha sonra programda kullanılacak olan fonksiyonlar bu kütüphane ismiyle birlikte çağrılır.
+Example:
+``
+
+
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. MATH_PROGRAM.
+
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       SOURCE-COMPUTER. IBM-370.
+       OBJECT-COMPUTER. IBM-370.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01 NUM1 PIC 9(2) VALUE 5.
+       01 NUM2 PIC 9(2) VALUE 3.
+       01 RESULT PIC 9(4).
+
+       PROCEDURE DIVISION.
+       MULTIPLY_NUMBERS.
+           USING CBL_MATH.
+           MULTIPLY NUM1 BY NUM2 GIVING RESULT.
+           DISPLAY "Result: " RESULT.
+           STOP RUN.
+ ``
+ #### Kendi kütüphanemizi nasıl kullanabiliriz.
+- COBOL dilinde, C dilinde olduğu gibi kütüphane (library) mekanizması bulunmaktadır. COBOL programcıları, önceden tanımlanmış fonksiyon ve prosedürleri içeren ve programlarında kullanabilecekleri kütüphaneler oluşturabilirler.
+- COBOL dilinde kütüphaneler, COPY ve REPLACE deyimleri kullanılarak tanımlanabilir. COPY deyimi, bir dosyadaki belirli bir bölümü, programın çalışma zamanında dahil etmek için kullanılır. REPLACE deyimi ise, bir COPY dosyasındaki belirli bir bölümü, programın çalışma zamanında değiştirmek için kullanılır.
+- Bunun yanı sıra, COBOL dilinde de pek çok standart kütüphane mevcuttur. Bu standart kütüphaneler, özellikle aritmetik, string işlemleri, dosya işlemleri ve ekran giriş/çıkışu gibi alanlarda sıklıkla kullanılan işlevleri içerir.
+
+### Soru 5) Cobol dili OOP yaklaşımına sahipmidir ?
+COBOL, genellikle OOP programlama dil olarak kabul edilmez. Ancak, 2002 ve 2014 standartlarında yapılan güncellemeler, COBOL'un nesne yönelimli programlama (OOP) yaklaşımına yaklaşmasını sağlamıştır.
+
+2002 COBOL standartı, OOP programlama konseptlerine dayanan yeni bir özellik olan "sınıf" tanımlamalarını tanıtmıştır. Bu özellik, COBOL programcılarının verileri ve işlevleri daha modüler ve yeniden kullanılabilir bir şekilde organize etmelerini sağlar. Ancak, sınıfların tamamen nesne yönelimli programlama mantığına uygun olduğunu söylemek doğru değildir.
+
+2014 COBOL standartı, COBOL'u daha da modüler hale getirmek ve nesne yönelimli programlama konseptlerine yaklaştırmak için birkaç özellik eklemiştir. Bunlar arasında, nesneleri ve nesne yönelimli programlama tekniklerini desteklemek için veri öğelerini tanımlama yeteneği, nesne yönelimli programlama kavramlarına uygun olarak kalıtım, çoklu kalıtım, arayüzler, soyut sınıflar ve özet veri tipleri gibi özellikler yer alır.
+
+Ancak, COBOL hala tam anlamıyla nesne yönelimli bir programlama dili olarak kabul edilmez. COBOL'un yapısal bir programlama dili olarak kalmaya devam etmesine rağmen, 2002 ve 2014 standartlarındaki güncellemeler COBOL'u daha da modüler ve yeniden kullanılabilir hale getirmiştir.
+
+COBOL dilindeki en önemli değişikliklerden bazıları şunlardır:
+
+- 2002 standartında tanıtılan sınıf tanımları
+- 2014 standartında tanıtılan veri öğesi tanımlama özellikleri
+- 2014 standartında tanıtılan nesne yönelimli programlama kavramlarına uygun olarak kalıtım, çoklu kalıtım, arayüzler, soyut sınıflar ve özet veri tipleri gibi özellikler
+Özetle, COBOL dilinin OOP özellikleri tam anlamıyla nesne yönelimli programlama dili olarak kabul edilmez. Ancak, 2002 ve 2014 standartlarında yapılan güncellemeler, COBOL'u daha modüler ve yeniden kullanılabilir hale getirmiştir.
 
 ## Yardımcı araçlar
 Burada kullandığım yararlandığım kaynakların tamamını listeleyeceğim
